@@ -6,16 +6,17 @@ import com.bhavya.orderservice.model.Order;
 import com.bhavya.orderservice.model.OrderLineItems;
 import com.bhavya.orderservice.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
 public class OrderService {
 
-  private final OrderRepository orderRepository;
+  @Autowired
+  private OrderRepository orderRepository;
 
   public void placeOrder(OrderRequest orderRequest) {
     Order order = new Order();
